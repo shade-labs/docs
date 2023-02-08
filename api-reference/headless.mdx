@@ -1,0 +1,21 @@
+---
+title: "Headless"
+description: "Using Shade headless - embedding search into your applications"
+---
+
+Getting started with Shade headless is easy.
+
+## If you're using the Shade Frontend
+If you're set up and using the GUI app, the shade backend is already up and running. You just need to connect to it.
+
+Generally you can use the url `127.0.0.1:9082` or `localhost:9082` and use that URL in the API endpoints and proceed to
+reading about the routes you want to use.
+
+## If you're running headless
+To run completely headless, we provide the docker image, make sure docker is running and then run:
+```bash
+docker run -p 9082:9082 shadeinc/shade
+```
+
+This will start the shade service on port 9082. Once this is up and running you can jump to the next section to start
+using the instance.

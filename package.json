@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "mintlify": "^2.0.17"
+  },
+  "scripts": {
+    "build": "mintlify build",
+    "dev": "mintlify dev",
+    "generate": "mintlify generate",
+    "start": "mintlify start"
+  }
+}
