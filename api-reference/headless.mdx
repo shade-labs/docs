@@ -19,3 +19,15 @@ docker run -p 9082:9082 shadeinc/shade
 
 This will start the shade service on port 9082. Once this is up and running you can jump to the next section to start
 using the instance.
+
+## I'm trying to:
+Here are some answers to a few common tasks people use our API for.
+<AccordionGroup>
+  <Accordion title="Search my assets">
+      Super easy, just check out the **search** route on the left.
+  </Accordion>
+  <Accordion title="I have a file path but I need the Shade ID">
+      We use IDs because it helps us look up files extremely quickly, especially on the scale of millions of assets.
+      If you have a file path, you can use the GET /indexing/file path to get it.
+  </Accordion>
+</AccordionGroup>
