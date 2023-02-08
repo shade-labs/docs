@@ -45,7 +45,20 @@
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/search"
+        "api-reference/endpoint/get_search",
+        "api-reference/endpoint/get_assets",
+        "api-reference/endpoint/put_assets_asset_id",
+        "api-reference/endpoint/get_assets_asset_id",
+        "api-reference/endpoint/get_indexing_status",
+        "api-reference/endpoint/post_indexing_file",
+        "api-reference/endpoint/post_indexing_folder",
+        "api-reference/endpoint/delete_indexing_folder",
+        "api-reference/endpoint/delete_indexing_file",
+        "api-reference/endpoint/get_collections",
+        "api-reference/endpoint/post_collections",
+        "api-reference/endpoint/get_indexing_file",
+        "api-reference/endpoint/post_collections_collection_id_files",
+        "api-reference/endpoint/delete_collections_collection_id_files"
       ]
     }
   ],
