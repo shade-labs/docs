@@ -7,25 +7,28 @@
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0069ED",
-    "light": "#4D9CFF",
-    "dark": "#0050B4"
-  },
-  "topbarLinks": [
-    {
-      "name": "Documentation",
-      "url": "https://mintlify.com/docs"
+    "primary": "#855CF8",
+    "light": "#855CF8",
+    "dark": "#855CF8",
+    "background": {
+      "light": "#FFFFFF",
+      "dark": "#000000"
     }
-  ],
+  },
   "topbarCtaButton": {
-    "name": "Get Started",
-    "url": "https://github.com/mintlify/starter"
+    "name": "Website",
+    "url": "https://shade.inc"
   },
   "anchors": [
     {
       "name": "API Reference",
       "icon": "rectangle-terminal",
       "url": "api-reference"
+    },
+    {
+      "name": "Shade Quickstart",
+      "icon": "slider",
+      "url": "getting-started"
     },
     {
       "name": "Community",
@@ -35,8 +38,12 @@
   ],
   "navigation": [
     {
-      "group": "Home",
-      "pages": ["introduction"]
+      "group": "Getting Started",
+      "pages": ["introduction", "getting-started", "shade-as-file-explorer"]
+    },
+    {
+      "group": "Indexing Assets",
+      "pages": ["indexing-assets/indexing", "indexing-assets/viewing", "indexing-assets/reset", "indexing-assets/indexing-audio", "indexing-assets/materials"]
     },
     {
       "group": "API Documentation",
@@ -63,8 +70,10 @@
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com/TryShadeInc",
+    "github": "https://github.com/open-shade",
+    "linkedin": "https://www.linkedin.com/company/shadeinc",
+    "website": "https://shade.inc",
+    "discord": "https://discord.gg/h8wqFMJ4vK"
   }
 }

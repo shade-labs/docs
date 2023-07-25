@@ -1,0 +1,37 @@
+---
+title: "Indexing Audio Samples and SFX"
+description: "Tips and tricks for indexing audio samples & SFX"
+---
+
+## Creating Your Audio library
+
+Indexing audio is incredibly simple, simply point it to the libraries and folders that you have your samples in, and Shade will handle the rest. 
+We leverage a combination of folder path, filename, metadata, and of course the sound itself to create a rich index of your audio samples.
+
+## Shade Separations
+
+Shade separates out your audio library into three primary classifications: Samples, SFX, and Dialogue. We've chosen these to enable our AI engine to search each differently. 
+Specifically, this allows us to create custom tags and descriptions for each different type of sound because, well they're different. How you search for a tinny snare drum, is very different from searching for a whoosh sound effect.
+
+That is why you'll see your assets separated out in the sidebar, and in search results.
+
+<Tip>
+If you know what you are searching for (sample, sfx, or dialogue), then going to specifically that audio type will yield the best results. This is because we use different neural embeddings specific to each audio type.
+</Tip>
+
+## Viewing Your Audio library
+
+As seen above, Shade gives you quick access to all of your audio assets so you can easily use them and drag and drop them into your favorite editor or DAW. Simply click on the audio types that you need, and quickly search for what you need.
+
+<video controls autoPlay src='https://firebasestorage.googleapis.com/v0/b/shade-prod.appspot.com/o/docs-videos%2Faudio-separations.mp4?alt=media&token=1ee9787a-a75e-4aa7-aac0-261e48eabf5b' />
+
+## Searching for Audio in the Command Palette
+
+Our command palette is the avenue to search Shade without having to open up the app itself. This works directly on top of any full screen application including things like Logic Pro and Ableton, so you can easily and quickly find the sample that you need.
+Here's how you search for vocal loop samples directly in the command palette.
+
+<Tip>
+Notice how when searching, going to the specific audio type like Samples will yield the best results
+</Tip>
+
+<video controls autoPlay src="https://firebasestorage.googleapis.com/v0/b/shade-prod.appspot.com/o/docs-videos%2Fcommand-palette-audio-search.mp4?alt=media&token=c0799867-ef81-40e7-9869-c5c1679715a1" />

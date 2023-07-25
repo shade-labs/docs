@@ -1,0 +1,80 @@
+---
+title: "Indexing Materials"
+description: "Tips and tricks for indexing materials"
+---
+
+## Creating Your Material library
+
+Imagine for a second that you were able to search through all of your materials that you've downloaded or made in the past. All of them created with a perfect tumble, and with tags and descriptions
+that allow you to easily search them. That's exactly what Shade has built out. However, we need your help to make sure we get it right. Here are a few tips and tricks to help you get started.
+
+## Naming Conventions and Directory Structure
+
+Unfortunately, Shade can't perfectly detect what is a normal map or displacement map, so we rely on a wide variety of detection algorithms to find it from the filename. Here is a list of a few names we probe for: 
+
+<Info>
+Note - all of the names are case insensitive
+</Info>
+
+<AccordionGroup>
+    <Accordion title="Color / Albedo Maps">
+        * Color
+        * COL
+        * map
+        * ALB
+        * ALBEDO
+    </Accordion>
+    <Accordion title="Normal Maps / Diffuse Maps">
+        * Normal
+        * NORM
+        * NRM
+        * DIFF
+        * DIF
+        * Diffuse
+        * Normal_GL
+        * Normal_DX
+        * NRML
+        * NRMAL
+    </Accordion>
+    <Accordion title="Displacement Maps / Bump Maps">
+        * Bump
+        * BMP
+        * DISP
+        * Displacement
+        * DISPLACE
+    </Accordion>
+    <Accordion title="Metalness Maps"> 
+        * Metalness
+        * Metal
+        * MTL
+    </Accordion>
+    <Accordion title="AO Maps">
+        * AO
+        * Ambient
+        * OCCLUSION
+        * OCCL
+    </Accordion>
+    <Accordion title="Specular Maps">
+        * SPEC
+        * SPECULAR
+    </Accordion>
+</AccordionGroup>
+
+Note - a material should be in one directory at a time. At this moment, Shade only supports discovering one material per directory structure. 
+Here is a screenshot of a well-formed texture directory (grabbed from [AmbientCG](https://ambientcg.com/)):
+
+<img src="/images/formed-material.png" />
+
+## Viewing Your Material library
+
+As Shade detects more materials, Shade will automatically add them to your ~3D section~ in the sidebar. You will see a materials tab, with descriptions, tags and previews for all of your textures.
+
+<video controls autoPlay src='https://firebasestorage.googleapis.com/v0/b/shade-prod.appspot.com/o/docs-videos%2Fmaterials.mp4?alt=media&token=1a926d53-65df-49c4-a160-3dc179273634' />
+
+## Viewing The Maps, Descriptions, and Tags
+
+Once you've indexed a material, you'll be able to click on the material in Shade, view it in search results, and see its descriptions and tags. 
+
+<img src="/images/material-ip.png" />
+
+If you need to use this material - simply open it in its folder, and grab all of the maps you need.
