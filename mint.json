@@ -46,6 +46,10 @@
       "pages": ["indexing-assets/indexing", "indexing-assets/viewing", "indexing-assets/reset", "indexing-assets/indexing-audio", "indexing-assets/materials"]
     },
     {
+      "group": "Editing Metadata",
+      "pages": ["metadata/updating-tags-and-descriptions"]
+    },
+    {
       "group": "API Documentation",
       "pages": ["api-reference/headless"]
     },
