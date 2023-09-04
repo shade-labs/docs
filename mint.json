@@ -49,6 +49,10 @@
       "pages": ["api-reference/headless"]
     },
     {
+      "group": "Studio",
+      "pages": ["studio/quickstart"]
+    },
+    {
       "group": "Endpoint Examples",
       "pages": [
         "api-reference/endpoint/get_search",

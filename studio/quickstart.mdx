@@ -1,0 +1,145 @@
+---
+title: "Shade Server Quickstart"
+description: "Starting and connecting to the Shade Server for the first time"
+---
+
+# Shade Server Quickstart
+We designed Shade server to be set up and run in only minutes, while being flexible to meet most studio IT configurations while making updates / maintenance easy. This guide involves two steps.
+
+1) Running the self-hosted server on the shared computer / workstation
+2) Connecting clients/artists to that server for searching & indexing
+
+Setting up and running the Shade server is done via terminal to enable headless configuration. All studio distributions - including the server distribution - use the build available on the website or on https://shade.inc/download. The backend and client/artist configurations are extremely flexible and can be run on any workstation that has drive access to the files that need to be viewed / searched.
+
+Typical setups include:
+
+- Shade running on a workstation that is connected via SMB or some file share to the relevant shared files while clients/artists are connected to the SMB
+- Shade running on a workstation that is connected physically to an external or internal drive, while clients/artists are connected to this workstation over SMB
+
+Running Shade as a studio requires a `SHADE_KEY` to be given to your organization from Shade. To obtain this key [contact us](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1KjFenJeNwpOYs2j67hIoI2Mp4P6cny_KGFEqfHiXDx4sKRc8IBbTLnrcBpnblyTkLHTA8UxLm).
+
+Shade will also use applications installed on the workstation to improve file support / indexing. These applications include 
+
+- Blender
+- Maya
+- Houdini
+- After Effects
+- Unreal Engine
+- Unity
+- 3DS Max
+
+## Environment Variables
+
+| Environment Variable | Description                                                  | Example Values                                     |
+| -------------------- | ------------------------------------------------------------ | -------------------------------------------------- |
+| `SHADE_KEY`          | A required key which should be set to the key given by Shade. This will enable server mode and enable unlimited assets for your organization. Setting this will also automatically tell Shade to broadcast on all network adapters (`0.0.0.0:9082`) if `SHADE_BROADCAST` is not set | Formatted like `XXXXXXXXXXXXXXXXXXXX`              |
+| `DISABLE_ANALYTICS`  | An optional environment variable that when set, shade will not send any analytics about errors or crashes to Shade. No analytics will be sent without internet. | Any value like `1` or `true`                       |
+| `SHADE_BROADCAST`    | Set the IP address for Shade to broadcast on, will use `0.0.0.0` if `SHADE_KEY` is set | A value like `0.0.0.0` or `127.0.0.1`              |
+| `SHADE_PORT`         | Set the port of the application to broadcast on. Default `9082`. This can also be set by passing the `-p 9082` flag to the executable. | A integer value like `5000` or `9082`              |
+| `SHADE_ROOT`         | An optional path to configure were the shade database, previews/thumbnails and other data to be stored. Shade must have read/write access to this location. | A string path like `/Users/studio/any_path/.shade` |
+
+
+## Windows
+Ensure you have downloaded and installed the Shade app from the website.
+
+### CMD
+
+Open cmd and run these commands, or save this into a `shade.bat` file and execute using cmd. You must locate `shade_backend.exe`. 
+
+- If you've installed it to your user this should be in `C:\Users\<YOUR USER FOLDER>\AppData\Local\Programs\shade\resources\extraResources\server\`
+- If you've installed this elsewhere or for all users, you may have to follow the location of the shortcut
+
+```cmd
+:: Set environment variables
+set SHADE_KEY=XXXXXXXXXXXXXXXX
+set DISABLE_ANALYTICS=1
+set SHADE_BROADCAST=0.0.0.0
+
+:: Start the server - replace %USERNAME% with the active user, or the path with the correct path to `shade_backend.exe`
+start /B "" "C:\Users\%USERNAME%\AppData\Local\Programs\shade\resources\extraResources\server\shade_backend.exe"
+```
+
+Proceed to connecting studio clients/artists, or write applications via the Shade SDK.
+
+### Powershell
+
+Open powershell and run these commands, or save this into a `shade.ps1` file and execute using powershell. You must locate `shade_backend.exe`. 
+
+- If you've installed it to your user this should be in `C:\Users\<YOUR USER FOLDER>\AppData\Local\Programs\shade\resources\extraResources\server\`
+- If you've installed this elsewhere or for all users, you may have to follow the location of the shortcut
+
+```powershell
+# Define the environment variables
+$env:SHADE_KEY="XXXXXXXXXXXXXXXX" # This is the key given from Shade
+$env:DISABLE_ANALYTICS="1"  # If analytics should be disabled
+$env:SHADE_BROADCAST="0.0.0.0"  # To broadcast on all interfaces
+
+# Start the server - replace <YOUR USER FOLDER> with the active user, or the path with the correct path to `shade_backend.exe`
+Start-Process -NoNewWindow -FilePath "C:\Users\<YOUR USER FOLDER>\AppData\Local\Programs\shade\resources\extraResources\server\shade_backend.exe"
+```
+
+Proceed to connecting studio clients/artists, or write applications via the Shade SDK.
+
+## Mac
+
+Open a terminal and run these commands, or save this into a `shade.bash` file which can be run with `bash ./shade.bash`.
+
+```bash
+export SHADE_KEY=XXXXXXXXXXXXXXXX # This is the key given from Shade
+export DISABLE_ANALYTICS=1  # If analytics should be disabled
+export SHADE_BROADCAST=0.0.0.0  # To broadcast on all interfaces
+
+# Start the server
+/Applications/Shade.app/Contents/Resources/extraResources/server/shade_backend
+```
+
+Going to a web browser at `http://0.0.0.0:9082`  or running `curl http://0.0.0.0:9082` should give the message `"This is the Shade server. Headlessly index, search and create visualizations for terabytes of files. For documentation: https://docs.shade.inc. For python SDK: https://github.com/open-shade/shade-python-sdk"`
+
+Proceed to connecting studio clients/artists, or write applications via the Shade SDK.
+
+## Linux
+
+Open a terminal and run these commands, or save this into a `shade.bash` file which can be run with `bash ./shade.bash`.
+
+```bash
+export SHADE_KEY=XXXXXXXXXXXXXXXX # This is the key given from Shade
+export DISABLE_ANALYTICS=1  # If analytics should be disabled
+export SHADE_BROADCAST=0.0.0.0  # To broadcast on all interfaces
+
+# Start the server
+chmod +x /path/to/the/downloaded/appimage/Shade-x.x.xx-snapshot.AppImage 
+/path/to/the/downloaded/appimage/Shade-x.x.xx-snapshot.AppImage
+```
+
+Going to a web browser at `http://0.0.0.0:9082`  or running `curl http://0.0.0.0:9082` should give the message `"This is the Shade server. Headlessly index, search and create visualizations for terabytes of files. For documentation: https://docs.shade.inc. For python SDK: https://github.com/open-shade/shade-python-sdk"`
+
+Proceed to connecting studio clients/artists, or write applications via the Shade SDK.
+
+## Updating
+
+Keeping the backend up to date with the latest features is simple with multiple approaches depending on internet availability.
+
+- **If internet access:** Open the Shade app GUI. On launch, if an update is available the "update is available" window will show. Simply select the relevant update option.
+- **If no internet or on terminal:** 
+  1. Download the new installer from https://shade.inc/download
+  2. (If necessary) transfer the downloaded file to the backend computer
+  3. Place the downloaded executable / DMG into the relevant location.
+  4. Extract and overwrite the previous installation
+
+# Connecting Clients/Artists
+
+Download the Shade app onto any artist/clients/workstations that need to connect to Shade. 
+
+Studio clients on the same network only need three pieces of information to connect & search. To locate the server and then for shade to perform path translation.
+
+1. **The network IP address of the Shade Server**. For most setups this is the same as the SMB server on the port `9082`, for example in our organization we have an SMB server at `smb://192.168.193.130`, so the shade address is `http://192.168.193.130:9082` 
+2. **The path to the shared drive from Shade server's perspective.** For example if the shade server is running an SMB server, which is serving the folder at `C:\Users\Studio\Assets`, then this value would be the same: ``C:\Users\Studio\Assets``.
+3. **The path to the shared drive from the client/artist perspective**. If clients mount the `Assets` folder at `D:\` or `/Volumes/Assets`, then this value would be `D:\` or `/Volumes/Assets` respectively.
+
+For multiple drives / share points, create multiple workspaces. We will be simplifying this process soon to automatically fill the relevant paths, but V1 requires this setup.
+
+To fill this information:
+
+1) Launch Shade, on the first screen select `I am using this in a Studio`
+2) Fill in the information above into the following screen
+3) Continue, then select the relevant workspace from the left sidebar. Clients can index anything locally with the `L` (local) workspace but can take advantage of the server by selecting the other workspaces/servers.
