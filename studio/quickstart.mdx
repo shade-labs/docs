@@ -44,9 +44,9 @@ Ensure you have downloaded and installed the Shade app from the website.
 
 ### CMD
 
-Open cmd and run these commands, or save this into a `shade.bat` file and execute using cmd. You must locate `shade_backend.exe`. 
+Open cmd and run these commands, or save this into a `shade.bat` file and execute using cmd. You must locate `Shade.exe`. 
 
-- If you've installed it to your user this should be in `C:\Users\<YOUR USER FOLDER>\AppData\Local\Programs\shade\resources\extraResources\server\`
+- If you've installed it to your user this should be in `C:\Users\<YOUR USER FOLDER>\AppData\Local\Programs\shade\Shade.exe`
 - If you've installed this elsewhere or for all users, you may have to follow the location of the shortcut
 
 ```cmd
@@ -56,16 +56,16 @@ set DISABLE_ANALYTICS=1
 set SHADE_BROADCAST=0.0.0.0
 
 :: Start the server - replace %USERNAME% with the active user, or the path with the correct path to `shade_backend.exe`
-start /B "" "C:\Users\%USERNAME%\AppData\Local\Programs\shade\resources\extraResources\server\shade_backend.exe"
+start /B "" "C:\Users\%USERNAME%\AppData\Local\Programs\shade\Shade.exe"
 ```
 
 Proceed to connecting studio clients/artists, or write applications via the Shade SDK.
 
 ### Powershell
 
-Open powershell and run these commands, or save this into a `shade.ps1` file and execute using powershell. You must locate `shade_backend.exe`. 
+Open powershell and run these commands, or save this into a `shade.ps1` file and execute using powershell. You must locate `Shade.exe`. 
 
-- If you've installed it to your user this should be in `C:\Users\<YOUR USER FOLDER>\AppData\Local\Programs\shade\resources\extraResources\server\`
+- If you've installed it to your user this should be in `C:\Users\<YOUR USER FOLDER>\AppData\Local\Programs\shade\Shade.exe`
 - If you've installed this elsewhere or for all users, you may have to follow the location of the shortcut
 
 ```powershell
@@ -75,25 +75,26 @@ $env:DISABLE_ANALYTICS="1"  # If analytics should be disabled
 $env:SHADE_BROADCAST="0.0.0.0"  # To broadcast on all interfaces
 
 # Start the server - replace <YOUR USER FOLDER> with the active user, or the path with the correct path to `shade_backend.exe`
-Start-Process -NoNewWindow -FilePath "C:\Users\<YOUR USER FOLDER>\AppData\Local\Programs\shade\resources\extraResources\server\shade_backend.exe"
+Start-Process -NoNewWindow -FilePath "C:\Users\<YOUR USER FOLDER>\AppData\Local\Programs\shade\Shade.exe"
 ```
 
 Proceed to connecting studio clients/artists, or write applications via the Shade SDK.
 
-## Mac
+## MacOS
 
 Open a terminal and run these commands, or save this into a `shade.bash` file which can be run with `bash ./shade.bash`.
 
 ```bash
+#!/bin/bash
 export SHADE_KEY=XXXXXXXXXXXXXXXX # This is the key given from Shade
 export DISABLE_ANALYTICS=1  # If analytics should be disabled
 export SHADE_BROADCAST=0.0.0.0  # To broadcast on all interfaces
 
 # Start the server
-/Applications/Shade.app/Contents/Resources/extraResources/server/shade_backend
+/Applications/Shade.app/Contents/MacOS/Shade
 ```
 
-Going to a web browser at `http://0.0.0.0:9082`  or running `curl http://0.0.0.0:9082` should give the message `"This is the Shade server. Headlessly index, search and create visualizations for terabytes of files. For documentation: https://docs.shade.inc. For python SDK: https://github.com/open-shade/shade-python-sdk"`
+Going to a web browser at `http://127.0.0.1:9082`  or running `curl http://0.0.0.0:9082` should give the message `"This is the Shade server. Headlessly index, search and create visualizations for terabytes of files. For documentation: https://docs.shade.inc. For python SDK: https://github.com/open-shade/shade-python-sdk"`
 
 Proceed to connecting studio clients/artists, or write applications via the Shade SDK.
 
@@ -102,6 +103,7 @@ Proceed to connecting studio clients/artists, or write applications via the Shad
 Open a terminal and run these commands, or save this into a `shade.bash` file which can be run with `bash ./shade.bash`.
 
 ```bash
+#!/bin/bash
 export SHADE_KEY=XXXXXXXXXXXXXXXX # This is the key given from Shade
 export DISABLE_ANALYTICS=1  # If analytics should be disabled
 export SHADE_BROADCAST=0.0.0.0  # To broadcast on all interfaces
