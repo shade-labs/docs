@@ -50,7 +50,17 @@
     },
     {
       "group": "Studio",
-      "pages": ["studio/quickstart"]
+      "pages": [
+        "studio/overview",
+        {
+          "Group": "Quickstart",
+          "pages": [
+            "studio/quickstart/windows",
+            "studio/quickstart/mac",
+            "studio/quickstart/linux"
+          ]
+        }
+      ]
     },
     {
       "group": "Endpoint Examples",

@@ -1,0 +1,49 @@
+## MacOS
+
+**If the studio has no internet access**, download a zip of offline models from here: https://shade.inc/download which we'll reference in the script later.
+
+Next, to start the sever, create a file called `shade.bash` somewhere in your user folder - typically the Desktop. The contents of the file should be as follows:
+
+```bash
+#!/bin/bash
+# Shade sources the models from either the internet or a local model zip if there is not internet. Make sure to set
+#  this environment variable if you're running in a shutdown environment. Ignore if internet access.
+export SHADE_MODELS_PATH=/path/to/the/downloaded/models/zip/if/necessary.zip
+# Shade gives this key during onboarding. This unlocks unlimited assets and enables broadcasting on all interfaces.
+export SHADE_KEY=XXXXXXXXXXXXXXXX # This is the key given from Shade
+
+export DISABLE_ANALYTICS=1  # If analytics should be disabled
+export SHADE_BROADCAST=0.0.0.0  # To broadcast on all interfaces
+export SHADE_PORT=9082  # defaults to 9082 but can be changed here
+
+# Start the server
+/Applications/Shade.app/Contents/Resources/extraResources/server/shade_backend
+```
+
+Make sure to update `SHADE_KEY` to use the proper key - if necessary modify `SHADE_MODELS_PATH`.
+
+Start the server by running `bash shade.bash` in the terminal from the same directory.
+
+If any issues arise, we're always happy to help in our discord, over email or live on a call!
+
+## Updating
+- **If internet access:** Open the Shade app GUI. On launch, if an update is available the "update is available" window will show. Simply select the relevant update option.
+- **If no internet or on terminal:**
+  1. Download the new installer from https://shade.inc/download
+  2. Overwrite the old app in `/Applications/Shade.app` with the new one
+  3. Restart the server
+
+## Connecting Mac Clients
+Download the Shade app onto any artist/clients/workstations that need to connect to Shade.
+
+Studio clients on the same network only need three pieces of information to connect & search. To locate the server and then for shade to perform path translation.
+
+1. **The network IP address of the Shade Server**. For most setups this is the same as the SMB server on the port `9082`, for example in our organization we have an SMB server at `smb://192.168.193.130`, so the shade address is `http://192.168.193.130:9082`
+2. **The path to the shared drive from Shade server's perspective.** For example, if the shade server is running an SMB server, which is serving an external drive at `/Users/assets`, then this value would be the same: `/Users/assets`.
+3. **The path to the shared drive from the client/artist perspective**. If clients mount the `assets` folder at `/Volumes/assets`, then this value would be `/Volumes/assets`.
+
+To fill this information:
+
+1) Launch Shade, on the first screen select `I am using this in a Studio`
+2) Fill in the information above into the following screen
+3) Continue, then select the relevant workspace from the left sidebar. Clients can index anything locally with the `L` (local) workspace but can take advantage of the server by selecting the other workspaces/servers.

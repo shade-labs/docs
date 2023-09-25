@@ -1,0 +1,42 @@
+---
+title: "Shade Server Quickstart"
+description: "Starting and connecting to the Shade Server for the first time"
+---
+
+# Shade Server Quickstart
+We designed Shade server to be set up and run in only minutes, while being flexible to meet most studio IT configurations while making updates / maintenance easy. This guide involves two steps.
+
+1) Running the self-hosted server on the shared computer / workstation
+2) Connecting clients/artists to that server for searching & indexing
+
+Setting up and running the Shade server is done via terminal to enable headless configuration. All studio distributions - including the server distribution - use the build available on the website or on https://shade.inc/download. The backend and client/artist configurations are extremely flexible and can be run on any workstation that has drive access to the files that need to be viewed / searched.
+
+Typical setups include:
+
+- Shade running on a workstation that is connected via SMB or some file share to the relevant shared files while clients/artists are connected to the SMB
+- Shade running on a workstation that is connected physically to an external or internal drive, while clients/artists are connected to this workstation over SMB
+
+Running Shade as a studio requires a `SHADE_KEY` to be given to your organization from Shade. To obtain this key [contact us](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1KjFenJeNwpOYs2j67hIoI2Mp4P6cny_KGFEqfHiXDx4sKRc8IBbTLnrcBpnblyTkLHTA8UxLm).
+
+Shade will also use applications installed on the workstation to improve file support / indexing. These applications include.
+
+- Blender
+- Maya
+- Houdini
+- After Effects
+- Unreal Engine
+- Unity
+- 3DS Max
+
+## Environment Variables
+
+| Environment Variable | Description                                                  | Example Values                                        |
+| -------------------- | ------------------------------------------------------------ | ----------------------------------------------------- |
+| `SHADE_KEY`          | A required key which should be set to the key given by Shade. This will enable server mode and enable unlimited assets for your organization. Setting this will also automatically tell Shade to broadcast on all network adapters (`0.0.0.0:9082`) if `SHADE_BROADCAST` is not set | Formatted like `XXXXXXXXXXXXXXXXXXXX`                 |
+| `DISABLE_ANALYTICS`  | An optional environment variable that when set, shade will not send any analytics about errors or crashes to Shade. No analytics will be sent without internet. | Any value like `1` or `true`                          |
+| `SHADE_BROADCAST`    | Set the IP address for Shade to broadcast on, will use `0.0.0.0` if `SHADE_KEY` is set | A value like `0.0.0.0` or `127.0.0.1`                 |
+| `SHADE_PORT`         | Set the port of the application to broadcast on. Default `9082`. This can also be set by passing the `-p 9082` flag to the executable. | A integer value like `5000` or `9082`                 |
+| `SHADE_ROOT`         | An optional path to configure were the shade database, previews/thumbnails and other data to be stored. Shade must have read/write access to this location. | A string path like `/Users/studio/any_path/.shade`    |
+| `SHADE_MODELS_PATH`  | For those without any internet access, this zip be downloaded so the backend can source models on demand. | A string path like `/Users/studio/path/to/models.zip` |
+
+Next, select your setup guide for Windows, Mac or Linux.

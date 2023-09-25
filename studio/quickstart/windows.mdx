@@ -1,0 +1,56 @@
+## Windows
+
+Ensure you have downloaded and installed the Shade app from the website and offline models zip if necessary.
+
+Open notepad and add the following powershell script. Note you must locate the `shade_backend.exe` file. This is typically in the following location:
+- If you've installed it to your user this should be in `C:\Users\<YOUR USER FOLDER>\AppData\Local\Programs\shade\Shade.exe`
+- If you've installed this elsewhere or for all users, you may have to follow the location of the shortcut
+
+```powershell
+# Shade gives this key during onboarding. This unlocks unlimited assets and enables broadcasting on all interfaces.
+$env:SHADE_KEY="XXXXXXXXXXXXXXXX"
+# Shade sources the models from either the internet or a local model zip if there is not internet. Make sure to set
+#  this environment variable if you're running in a shutdown environment.
+$env:SHADE_MODELS_PATH="C:\path\to\models.zip"
+
+$env:DISABLE_ANALYTICS="1"  # If analytics should be disabled
+$env:SHADE_BROADCAST="0.0.0.0"  # To broadcast on all interfaces
+$env:SHADE_PORT="9082"  # defaults to 9082 but can be changed here
+
+# Start the backend. Make sure to replace the path with the correct path to the backend executable. This can typically be found
+#  by right clicking on the desktop shortcut, then opening that in file explorer. Open the folder and navigate to the resources/extraResources/server folder
+#  and copy that path + shade_backend.exe
+Start-Process -NoNewWindow -FilePath "C:\Users\<YOUR USER FOLDER>\AppData\Local\Programs\shade\resources\extraResources\server\shade_backend.exe"
+```
+
+Make sure to update the path to the `shade_backend.exe` and set `SHADE_KEY` and `SHADE_MODELS_PATH` if necessary.
+
+Save the file as `shade.ps1` and then right click on the file and select "Run with Powershell".
+
+If any issues arise, we're always happy to help in our discord, over email or live on a call!
+
+## Updating
+
+Keeping the backend up to date with the latest features is simple with multiple approaches depending on internet availability.
+
+- **If internet access:** Open the Shade app GUI (`shade.exe`). On launch, if an update is available the "update is available" window will show. Simply select the relevant update option.
+- **If no internet or on terminal:**
+  1. Download the new installer from https://shade.inc/download
+  2. Overwrite the old shade folder with the new one
+  3. Make sure to update the path to the `shade_backend.exe` and restart the server
+
+
+## Connecting Linux Clients
+Download the Shade app onto any artist/clients/workstations that need to connect to Shade.
+
+Studio clients on the same network only need three pieces of information to connect & search. To locate the server and then for shade to perform path translation.
+
+1. **The network IP address of the Shade Server**. For many setups this is the same as the SMB server on the port `9082`, for example, in our organization we have an SMB server at `smb://192.168.193.130`, so the shade address is `http://192.168.193.130:9082`. If not, running `ipconfig` and using the ipv4 shown will typically work.
+2. **The path to the shared drive from Shade server's perspective.** For example, if the shade server is running an SMB server, which is serving an external drive at `C:\studio\media`, then this value would be the same: `C:\studio\media`.
+3. **The path to the shared drive from the client/artist perspective**. If clients mount the `assets` folder at `Z:\assets`, then this value would be `Z:\assets`.
+
+To fill this information:
+
+1) Launch Shade, on the first screen select `I am using this in a Studio`
+2) Fill in the information above into the following screen
+3) Continue, then select the relevant workspace from the left sidebar. Clients can index anything locally with the `L` (local) workspace but can take advantage of the server by selecting the other workspaces/servers.
