@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "mintlify": "^2.1.0"
+    "mintlify": "^4.0.40"
   },
   "scripts": {
     "build": "mintlify build",
