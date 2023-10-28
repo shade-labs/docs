@@ -73,7 +73,11 @@
         "api-reference/endpoint/gets-number-of-assets-returned-in-search-query",
         "api-reference/endpoint/kill-the-backend-if-in-prod-and-we-havent-received-a-heartbeat-in-some-number-of-seconds",
         "api-reference/endpoint/kills-the-server",
-        "api-reference/endpoint/return-the-file-path-to-the-exported-asset",
+        "api-reference/endpoint/return-the-file-path-to-the-exported-asset"
+      ]},
+    {
+      "group": "Assets",
+      "pages": [
         "api-reference/endpoint/assets/add-a-source-to-the-source-list",
         "api-reference/endpoint/assets/add-tags-to-an-asset",
         "api-reference/endpoint/assets/delete-all-assets",
@@ -93,8 +97,12 @@
         "api-reference/endpoint/assets/returns-the-asset-type-for-a-given-file",
         "api-reference/endpoint/assets/returns-the-objects-detected-in-an-image",
         "api-reference/endpoint/assets/unlink-an-asset-from-another-asset",
-        "api-reference/endpoint/assets/update-an-asset",
+        "api-reference/endpoint/assets/update-an-asset"
+      ]},
 
+    {
+      "group": "Collections",
+      "pages": [
         "api-reference/endpoint/collections/add-assets-to-a-collection",
         "api-reference/endpoint/collections/check-if-a-collection-contains-a-set-of-assets",
         "api-reference/endpoint/collections/create-a-user-collection",
@@ -105,17 +113,32 @@
         "api-reference/endpoint/collections/list-all-collections",
         "api-reference/endpoint/collections/remove-assets-from-a-collection",
         "api-reference/endpoint/collections/save-asset-to-shade",
-        "api-reference/endpoint/collections/update-a-collection",
+        "api-reference/endpoint/collections/update-a-collection"
+      ]},
 
+    {
+      "group": "Comments",
+      "pages": [
         "api-reference/endpoint/comments/add-a-comment-for-an-asset",
-        "api-reference/endpoint/comments/get-comments-for-an-asset",
+        "api-reference/endpoint/comments/get-comments-for-an-asset"
+      ]},
 
+    {
+      "group": "Convert",
+      "pages": [
         "api-reference/endpoint/convert/convert-a-video-to-another-format",
-        "api-reference/endpoint/convert/convert-an-image-to-another-format",
+        "api-reference/endpoint/convert/convert-an-image-to-another-format"
+      ]},
 
-        "api-reference/endpoint/generate/generate-a-new-asset-via-generate-api",
+    {
+      "group": "Generate",
+      "pages": [
+        "api-reference/endpoint/generate/generate-a-new-asset-via-generate-api"
+      ]},
 
-
+    {
+      "group": "Indexing",
+      "pages": [
         "api-reference/endpoint/indexing/add-asset-roots",
         "api-reference/endpoint/indexing/check-indexing-status",
         "api-reference/endpoint/indexing/force-re-sync-of-all-asset-roots",
@@ -129,19 +152,40 @@
         "api-reference/endpoint/indexing/remove-an-asset-root",
         "api-reference/endpoint/indexing/request-to-get-the-corresponding-asset-for-a-given-file",
         "api-reference/endpoint/indexing/reset-indexing",
-        "api-reference/endpoint/indexing/set-the-indexing-asset-limit",
+        "api-reference/endpoint/indexing/set-the-indexing-asset-limit"
+      ]},
 
+    {
+      "group": "Models",
+      "pages": [
         "api-reference/endpoint/models/delete-a-model",
-        "api-reference/endpoint/models/request-a-model-to-download",
+        "api-reference/endpoint/models/request-a-model-to-download"
+      ]},
 
-        "api-reference/endpoint/players/edit-players-number",
+    {
+      "group": "Players",
+      "pages": [
+        "api-reference/endpoint/players/edit-players-number"
+      ]},
 
+    {
+      "group": "Previews",
+      "pages": [
         "api-reference/endpoint/previews/get-a-preview-by-id-this-will-return-the-image-bytes",
-        "api-reference/endpoint/previews/request-the-generation-of-a-preview-at-this-path",
+        "api-reference/endpoint/previews/request-the-generation-of-a-preview-at-this-path"
+      ]},
 
+    {
+      "group": "Remove Background",
+      "pages": [
         "api-reference/endpoint/remove_background/remove-the-background"
-      ]
-    }
+      ]},
+
+    {
+      "group": "Search",
+      "pages": [
+        "api-reference/endpoint/search/search-for-assets"
+      ]}
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/TryShadeInc",
