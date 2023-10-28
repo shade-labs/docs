@@ -65,16 +65,15 @@
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/search/search-for-assets",
-
         "api-reference/endpoint/basic-information-about-using-shade",
         "api-reference/endpoint/get-the-shade-config",
         "api-reference/endpoint/get-the-status-of-the-server",
+        "api-reference/endpoint/search/search-for-assets",
         "api-reference/endpoint/get-the-usage-of-all-assets-for-analytics",
         "api-reference/endpoint/gets-number-of-assets-returned-in-search-query",
         "api-reference/endpoint/kill-the-backend-if-in-prod-and-we-havent-received-a-heartbeat-in-some-number-of-seconds",
         "api-reference/endpoint/kills-the-server",
-        "api-reference/endpoint/return-the-path-to-the-exported-asset",
+        "api-reference/endpoint/return-the-file-path-to-the-exported-asset",
         "api-reference/endpoint/assets/add-a-source-to-the-source-list",
         "api-reference/endpoint/assets/add-tags-to-an-asset",
         "api-reference/endpoint/assets/delete-all-assets",
@@ -108,9 +107,13 @@
         "api-reference/endpoint/collections/save-asset-to-shade",
         "api-reference/endpoint/collections/update-a-collection",
 
+        "api-reference/endpoint/comments/add-a-comment-for-an-asset",
+        "api-reference/endpoint/comments/get-comments-for-an-asset",
 
         "api-reference/endpoint/convert/convert-a-video-to-another-format",
         "api-reference/endpoint/convert/convert-an-image-to-another-format",
+
+        "api-reference/endpoint/generate/generate-a-new-asset-via-generate-api",
 
 
         "api-reference/endpoint/indexing/add-asset-roots",
@@ -130,6 +133,8 @@
 
         "api-reference/endpoint/models/delete-a-model",
         "api-reference/endpoint/models/request-a-model-to-download",
+
+        "api-reference/endpoint/players/edit-players-number",
 
         "api-reference/endpoint/previews/get-a-preview-by-id-this-will-return-the-image-bytes",
         "api-reference/endpoint/previews/request-the-generation-of-a-preview-at-this-path",
