@@ -37,6 +37,16 @@
       "pages": ["introduction", "getting-started", "shade-as-file-explorer"]
     },
     {
+      
+        "group": "Start Guide",
+        "icon": "download", 
+        "pages": [
+          "start-guide/get-the-app", 
+          "start-guide/use-shade",
+          "start-guide/understand-the-structure" 
+        ]
+      },
+    {
       "group": "Indexing Assets",
       "pages": ["indexing-assets/indexing", "indexing-assets/viewing", "indexing-assets/reset", "indexing-assets/indexing-audio", "indexing-assets/materials"]
     },
@@ -194,4 +204,5 @@
     "website": "https://shade.inc",
     "discord": "https://discord.gg/h8wqFMJ4vK"
   }
+  
 }
