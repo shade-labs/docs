@@ -33,22 +33,19 @@
   ],
   "navigation": [
     {
-      "group": "Getting Started",
-      "pages": ["introduction", "getting-started", "shade-as-file-explorer"]
-    },
-    {
       
         "group": "Start Guide",
         "icon": "download", 
         "pages": [
+          "introduction",
           "start-guide/get-the-app", 
           "start-guide/use-shade",
           "start-guide/understand-the-structure" 
         ]
       },
     {
-      "group": "Indexing Assets",
-      "pages": ["indexing-assets/indexing", "indexing-assets/viewing", "indexing-assets/reset", "indexing-assets/indexing-audio", "indexing-assets/materials"]
+      "group": "Shade AI Indexing",
+      "pages": ["indexing-assets/indexing", "indexing-assets/viewing", "indexing-assets/indexing-audio", "indexing-assets/materials", "indexing-assets/engines", "indexing-assets/facialrecognition", "indexing-assets/reset"]
     },
     {
       "group": "Editing Metadata",
@@ -69,7 +66,10 @@
             "studio/quickstart/mac",
             "studio/quickstart/linux"
           ]
-        }
+        },
+        "studio/localbroadcast",
+        "studio/highavailability",
+        "studio/connectingclients"  
       ]
     },
     {
@@ -203,6 +203,10 @@
     "linkedin": "https://www.linkedin.com/company/shadeinc",
     "website": "https://shade.inc",
     "discord": "https://discord.gg/h8wqFMJ4vK"
+  },
+  "analytics": {
+    "koala": {
+      "publicApiKey": "pk_f9ad3141373a8f2186ddaa08302df4d6f5c6"
+    }
   }
-  
 }

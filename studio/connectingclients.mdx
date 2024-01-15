@@ -1,0 +1,33 @@
+---
+title: "Connecting Clients"
+description: "Connecting your clients to your local network or server"
+---
+
+# Step-by-Step Guide to Connect your Clients
+
+1) Find the IP address of your instance. Typically this can be done on Mac by going to Network -> WiFi (or your active connection like ethernet)-> Details. Use the number in `IP Address`
+![image](ipaddress.png)
+2) On a different computer, test this connection by typing the following into the url bar: `http://(ip address):9082/app`. Doing this brings up the Shade web version - a lite version of Shade that supports browsing and searching.
+3) Connect the instance to a user/artist's desktop app
+
+    i. Open the Shade app on the user's computer
+
+    ii. On the left sidebar hit the `+` button and then join a workspace
+
+    iii. Enter a name for the workspace. This can be any name and will be localized to the user's computer.
+
+    iv. Now enter the ip address for the server: `http://(ip address):9082` (the web version without the /app)
+
+    v. If the user has an SMB mount for the remote file share:
+
+            a. Fill in the workspace mounts. the first box is the path to the shared drive from Shade server's perspective. For example if the shade server is running an SMB server, which is serving an external drive at `/media/assets`, then this value would be the same: `/media/assets`
+    
+            b. Fill in the path to the shared drive from the client/artist perspective. If clients mount the assets folder at /media/user/assets, then this value would be `/media/user/assets`.
+
+            c. Hit continue, the workspace should now be available on the sidebar. All indexes and roots are now shared between everyone connected.
+
+
+<video controls autoPlay>
+  <source src="workspacevid.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
