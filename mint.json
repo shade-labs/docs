@@ -59,14 +59,6 @@
       "group": "Studio",
       "pages": [
         "studio/overview",
-        {
-          "group": "Platform Guides",
-          "pages": [
-            "studio/quickstart/windows",
-            "studio/quickstart/mac",
-            "studio/quickstart/linux"
-          ]
-        },
         "studio/localbroadcast",
         "studio/highavailability",
         "studio/connectingclients"  
